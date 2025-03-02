@@ -1,0 +1,15 @@
+global:
+    scrape_interval: "15s"
+
+scrape_configs:
+    # define jobs
+    - job_name: prometheus_dashboard
+      static_configs:
+          - targets:
+                - "localhost:9090"
+
+    - job_name: demo_server
+      metrics_path: /
+      static_configs:
+          - targets:
+                - "host.docker.internal:8000"
