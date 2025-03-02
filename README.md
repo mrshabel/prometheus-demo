@@ -6,7 +6,7 @@ This repository contains a demo of prometheus, an open-source monitoring tool.
 
 ### ⏲️ Counter
 
-The Counter instrumenting tool is used for monitoring metrics that only _go up_ and usually reset when the process restarts. Such instances could be checking the number of requests made to a service or the number of exceptions occurred.
+The Counter instrumenting tool is used for monitoring metrics that only _go up_ and usually reset when the process restarts. Such instances could be checking the number of requests made to a service or the number of exceptions occurred. During a counter reset, the metric usually goes to 0. Request duration can also be monitored with a counter by recording their seconds taken to process the request.
 
 ### 📈 Gauge
 
@@ -36,3 +36,13 @@ docker compose up
 ```
 
 ![Demo Server](./demo.png)
+
+## Grafana
+
+A data visualization tool for viewing scraped metrics from Prometheus. Grafana supports PromQL out of the box so we can just hook it up into the project and simply create stunning dashboards without manually writing PromQLs.
+
+![Grafana Dashboard](./grafana.png)
+
+## Metrics Dashboard
+
+![Final Dashboard](./final.png)
